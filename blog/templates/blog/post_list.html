@@ -6,17 +6,13 @@
         <div>
             <h1><a href="/">Water</h1></a></h1>
         </div>
-
-        <div>
-            <p>publicado: 14.06.2021, 12:14</p>
-            <h2><a href="">Cool stuff about water</a></h2>
-            <p>Water is called the "universal solvent" because it dissolves more substances than any other liquid. This means that wherever water goes, either through the ground or through our bodies, it takes along valuable chemicals, minerals, and nutrients.</p>
-        </div>
-
-        <div>
-            <p>publicado: 14.06.2014, 12:14</p>
-            <h2><a href="">More water</a></h2>
-            <p>Pure water has a neutral pH of 7, which is neither acidic (less than 7) nor basic (greater than 7).</p>
-        </div>
+        
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %} 
     </body>
 </html>
